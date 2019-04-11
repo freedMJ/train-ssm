@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lmj.train.mapper.UserMapper" >
+    <!--注册用户-->
+    <insert id="registerUser" parameterType="com.lmj.train.model.User" >
+      insert into user values(null,#{username},#{password},#{email},#{idCard},#{phoneNums},#{type});
+    </insert>
+    <!--判断用户名是否已存在-->
+    <select id="findUserByUserName" parameterType="java.lang.String"  resultType="com.lmj.train.model.User">
+        select * from user where username=#{username};
+    </select>
+    <select id="getUserByName" resultType="int">
+        select count(*) from user where username=#{username}
+    </select>
+    <!--用户登录-->
+    <select id="loginUser" resultType="com.lmj.train.model.User">
+        select * from user where username=#{username} and password=#{password} and type=#{type};
+    </select>
+</mapper>

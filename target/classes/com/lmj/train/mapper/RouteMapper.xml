@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lmj.train.mapper.RouteMapper" >
+
+    <!--//新增站点-->
+    <insert id="addStation">
+        insert into station values(null,#{stationName})
+    </insert>
+    <!--修改站点-->
+    <update id="updateStation">
+        update station set stationName=#{stationName}
+    </update>
+    <!--删除站点-->
+    <delete id="deleteStation">
+        delete from station where stationName=#{stationName}
+    </delete>
+    <!--查找站点-->
+    <select id="findStationByName" resultType="Station">
+        select * from station where stationName=#{stationName}
+    </select>
+</mapper>

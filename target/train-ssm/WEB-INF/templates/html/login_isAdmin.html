@@ -1,0 +1,28 @@
+<div th:fragment="headHtml" xmlns:th="http://www.w3.org/1999/xhtml">
+    <base th:href="${#request.getContextPath()}+'/'">
+    <div th:if="${session.userType}==0">
+        <li role="presentation"  >
+            <div class="btn-group">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    路线管理 <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="/manageRoute">管理路线</a></li>
+                    <li><a href="/saveRoute">新增路线</a></li>
+                    <li><a href="/manageStation">管理站点</a></li>
+                    <li><a href="/addStation">新增站点</a></li>
+                </ul>
+            </div>
+        </li>
+    </div>
+    <span style="color: red">列车发车前30分钟不允许购买该车次车票，同一用户相同时间段内只能购买一张火车票</span>
+    <div th:if="${session.user}!=null">
+        <li role="presentation" style="float: right;"><a href="userOut">退出</a></li>
+        <li role="presentation" style="float: right;">欢迎你,<a href="userContor" th:text="${session.user}"></a></li>
+
+    </div>
+    <div th:if="${session.user}==null">
+        <li role="presentation" style="float: right;"><a href="register">注册</a></li>
+        <li role="presentation" style="float: right;"><a href="login">登录</a></li>
+    </div>
+</div>
