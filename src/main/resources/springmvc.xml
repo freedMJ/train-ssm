@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+      http://www.springframework.org/schema/mvc
+      http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-4.3.xsd
+      http://www.springframework.org/schema/aop
+      http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+      http://www.springframework.org/schema/tx
+      http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+    <mvc:annotation-driven />
+    <!-- 1.注解扫描位置-->
+    <!--<mvc:default-servlet-handler/>-->
+    <context:component-scan base-package="com.lmj.train.controller" />
+    <!--<mvc:default-servlet-handler/>-->
+    <!-- SpringMVC配置 -->
+    <!--<mvc:annotation-driven/>-->
+
+    <!-- 映射静态资源文件目录 -->
+    <!--<mvc:resources mapping="/js/**" location="/WEB-INF/static/js/" />-->
+    <!--<mvc:resources mapping="/css/**" location="/WEB-INF/static/css/" />-->
+    <!--<mvc:resources mapping="/img/**" location="/WEB-INF/static/img/" />-->
+    <!--<mvc:resources mapping="/jsa/**" location="/WEB-INF/static/jsa/" />-->
+    <!--<mvc:resources mapping="/layui/**" location="/WEB-INF/static/layui/" />-->
+    <!--<mvc:resources mapping="/related/**" location="/WEB-INF/static/related/" />-->
+    <!--<mvc:resources mapping="/scss/**" location="/WEB-INF/static/scss/" />-->
+    <mvc:resources mapping="/static/**" location="/WEB-INF/static/" />
+    <!-- 2.配置映射处理和适配器-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+
+    <bean id="templateResolver"
+          class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
+        <property name="prefix" value="/WEB-INF/templates/html/"/>
+        <property name="suffix" value=".html"/>
+        <property name="characterEncoding" value="UTF-8"/>
+        <property name="order" value="1"/>
+        <property name="templateMode" value="HTML5"/>
+        <property name="cacheable" value="false"/>
+    </bean>
+
+    <bean id="templateEngine"
+          class="org.thymeleaf.spring4.SpringTemplateEngine">
+        <property name="templateResolver" ref="templateResolver"/>
+    </bean>
+
+    <bean id="viewResolver" class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
+        <property name="templateEngine" ref="templateEngine"/>
+        <property name="characterEncoding" value="UTF-8"/>
+    </bean>
+    <!--<bean id="templateResolver"-->
+          <!--class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">-->
+        <!--<property name="prefix" value="/WEB-INF/html/"/>-->
+        <!--<property name="suffix" value=".html"/>-->
+        <!--<property name="templateMode" value="HTML5"/>-->
+        <!--&lt;!&ndash; Template cache is set to false (default is true).        &ndash;&gt;-->
+        <!--<property name="cacheable" value="false"/>-->
+        <!--<property name="characterEncoding" value="UTF-8"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">-->
+        <!--<property name="templateResolver" ref="templateResolver"/>-->
+    <!--</bean>-->
+
+    <!--<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">-->
+        <!--<property name="contentNegotiationManager" ref="cnManager"/>-->
+
+        <!--<property name="viewResolvers">-->
+            <!--<list>-->
+                <!--&lt;!&ndash; Used here for 'xml' and 'atom' views  &ndash;&gt;-->
+                <!--<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">-->
+                    <!--<property name="order" value="1"/>-->
+                <!--</bean>-->
+
+                <!--<bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">-->
+                    <!--<property name="templateEngine" ref="templateEngine"/>-->
+                    <!--<property name="characterEncoding" value="UTF-8"/>-->
+                    <!--<property name="order" value="2"/>-->
+                    <!--&lt;!&ndash; We need to set exclusions because Content Negotiation tries to resolve from &ndash;&gt;-->
+                    <!--&lt;!&ndash; Thymeleaf even if a specific view bean (of a different class) is already    &ndash;&gt;-->
+                    <!--&lt;!&ndash; found, which might cause exceptions (e.g. ThymeleafView does not have a     &ndash;&gt;-->
+                    <!--&lt;!&ndash; 'marshaller' property).                                                     &ndash;&gt;-->
+                    <!--<property name="excludedViewNames" value="*.xml"/>-->
+                <!--</bean>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--&lt;!&ndash; Simple strategy: only path extension is taken into account &ndash;&gt;-->
+    <!--<bean id="cnManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">-->
+        <!--<property name="favorPathExtension" value="true"/>-->
+        <!--<property name="ignoreAcceptHeader" value="true"/>-->
+        <!--<property name="defaultContentType" value="text/html"/>-->
+
+        <!--<property name="mediaTypes">-->
+            <!--<map>-->
+                <!--<entry key="html" value="text/html"/>-->
+                <!--<entry key="xml" value="application/xml"/>-->
+                <!--<entry key="atom" value="application/atom+xml"/>-->
+            <!--</map>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!-- 3.视图的解析器-->
+    <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+        <!--<property name="prefix" value="/WEB-INF/views/" />-->
+        <!--<property name="suffix" value=".jsp" />-->
+    <!--</bean>-->
+</beans>
