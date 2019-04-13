@@ -51,7 +51,7 @@ public class UserController {
     @GetMapping("/userOut")
     public String userOut(HttpServletRequest request){
         HttpSession session = request.getSession();
-        session.removeAttribute("useraaa");
+        session.removeAttribute("user");
         session.removeAttribute("userType");
         return "index";
     }

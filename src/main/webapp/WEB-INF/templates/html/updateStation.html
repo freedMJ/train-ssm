@@ -31,11 +31,17 @@
       <h2>请填写站点相关信息</h2>
     </div>
   <div >
-  <form class="form-horizontal" action="addStation" method="post" style="margin-top: 50px;margin-left: 300px">
+  <form class="form-horizontal" action="updateStation" method="post" style="margin-top: 50px;margin-left: 300px">
+    <div class="form-group" style="width: 1000px">
+      <label for="input4" class="col-sm-2 control-label">站点id</label>
+      <div class="col-sm-10" >
+        <input type="text" class="form-control" id="input4" th:value="${station.id}" name="id" readonly >
+      </div>
+    </div>
   <div class="form-group" style="width: 1000px">
     <label for="input3" class="col-sm-2 control-label">站点</label>
     <div class="col-sm-10" >
-      <input type="text" class="form-control" id="input3" th:value="${stationName}" name="stationName">
+      <input type="text" class="form-control" id="input3" th:value="${station.stationName}" name="stationName">
     </div>
   </div>
   

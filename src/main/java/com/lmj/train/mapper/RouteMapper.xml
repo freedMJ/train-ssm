@@ -8,14 +8,27 @@
     </insert>
     <!--修改站点-->
     <update id="updateStation">
-        update station set stationName=#{stationName}
+        update station set stationName=#{stationName} where id=#{id}
     </update>
     <!--删除站点-->
     <delete id="deleteStation">
-        delete from station where stationName=#{stationName}
+        delete from station where id=#{id}
     </delete>
     <!--查找站点-->
     <select id="findStationByName" resultType="Station">
         select * from station where stationName=#{stationName}
     </select>
+    <!--站点分页查询-->
+    <select id="findStatinByPageHepler" resultType="station">
+        select * from station
+    </select>
+    <!--根据站点id查找站点名-->
+    <select id="findStationNameById" resultType="station">
+        select * from station where id=#{id}
+    </select>
+
+
+
+
+
 </mapper>
