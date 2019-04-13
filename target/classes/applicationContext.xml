@@ -32,7 +32,7 @@
         <!--<property name="configLocation" value="classpath:mybatis.xml"/>-->
         <!--配置别名-->
         <property name="typeAliasesPackage" value="com.lmj.train.model"></property>
-
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
         <!--配置加载映射文件 UserMapper.xml-->
         <property name="mapperLocations" value="classpath:com/lmj/train/mapper/*Mapper.xml"/>
         <!--<property name="mapperLocations" value="classpath:com/lmj/train"/>-->
@@ -57,4 +57,5 @@
     </bean>
     <!-- 6.开启事务注解-->
     <tx:annotation-driven></tx:annotation-driven>
+
 </beans>

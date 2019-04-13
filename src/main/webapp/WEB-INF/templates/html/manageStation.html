@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" xmlns:th="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,20 +25,8 @@
   <li role="presentation"  ><a href="#">大厅</a></li>
   <li role="presentation" ><a href="buyTicketContre.html">购票中心</a></li>
   <li role="presentation" ><a href="userContre.html">个人中心</a></li>
-  <li role="presentation"  style="text-align: center;" class="active">
-    <div class="btn-group">
-  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   路线管理 <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><a href="manageRoute.html">管理路线</a></li>
-    <li><a href="saveRoute.html">新增路线</a></li>
-     <li><a href="addStation.html">新增站点</a></li>
+    <div th:include="login_isAdmin::headHtml"></div>
   </ul>
-</div>
-  </li>
-  <li role="presentation" style="float: right;"><a href="register.html">注册</a></li>
-  <li role="presentation" style="float: right;"><a href="login.html">登录</a></li>
 </ul>
   <table class="table">
     <tr>
@@ -46,55 +34,38 @@
       <td>站点名称</td>
       <td>管理</td>
     </tr>
-    <tr>
-      <td>1</td>>
-      <td>武汉站</td>
-       <td><a href="addStation.html"><span>修改</span></a>&nbsp&nbsp<a href="#"><span>删除</span></td></a>
-    </tr>
-    <tr>
-      <td>1</td>>
-      <td>武汉站</td>
-       <td><a href="addStation.html"><span>修改</span></a>&nbsp&nbsp<a href="#"><span>删除</span></td></a>
-    </tr>
-    <tr>
-      <td>1</td>>
-      <td>武汉站</td>
-       <td><a href="addStation.html"><span>修改</span></a>&nbsp&nbsp<a href="#"><span>删除</span></td></a>
-    </tr>
-    <tr>
-      <td>1</td>>
-      <td>武汉站</td>
-       <td><a href="addStation.html"><span>修改</span></a>&nbsp&nbsp<a href="#"><span>删除</span></td></a>
-    </tr>
-    <tr>
-      <td>1</td>>
-      <td>武汉站</td>
-       <td><a href="addStation.html"><span>修改</span></a>&nbsp&nbsp<a href="#"><span>删除</span></td></a>
-    </tr>
-    <tr>
-      <td>1</td>>
-      <td>武汉站</td>
-       <td><a href="addStation.html"><span>修改</span></a>&nbsp&nbsp<a href="#"><span>删除</span></td></a>
-    </tr>
-    <tr>
-      <td>1</td>>
-      <td>武汉站</td>
-       <td><a href="addStation.html"><span>修改</span></a>&nbsp&nbsp<a href="#"><span>删除</span></td></a>
+
+    <tr th:each="station,stationStat:${stationList.list}">
+      <td th:text="${stationStat.index}"></td>
+      <td th:text="${station.stationName}"></td>
+      <td><a th:href="@{'/updateStation?id='+${station.id}}"><span>修改</span></a>&nbsp&nbsp<a th:href="@{'/deleteStation?id='+${station.id}}"><span>删除</span></a></td>
     </tr>
    
 
 </table>
-<nav aria-label="...">
-  <ul class="pagination">
-    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
-    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-    <li ><a href="#">2 <span class="sr-only">(current)</span></a></li>
-    <li ><a href="#">3 <span class="sr-only">(current)</span></a></li>
-    <li ><a href="#">4 <span class="sr-only">(current)</span></a></li>
-    <li><a href="#">5 <span class="sr-only">(current)</span></a></li>
-    <li ><a href="#">6 <span class="sr-only">(current)</span></a></li>
-    <li ><a href="#" aria-label="Previous"><span aria-hidden="true">下一页</span></a></li>
-  </ul>
+    <nav aria-label="Page navigation">
+
+      <ul class="pagination" >
+
+        <li th:if="${pageNum -1>0}"><a th:href="@{'/manageStation?pageNum='+${pageNum-1}}" aria-label="Previous" th:text="上一页"><span aria-hidden="true"></span></a></li>
+        <!--如果当前页等于分页-->
+        <li th:each="page,pageStat:${pageNumArray}" >
+          <a th:if="${page ==pageNum}"  href="#"  th:text="${page}" ></a>
+          <a th:unless="${page ==pageNum}"  th:href="@{'/manageStation?pageNum='+${page}}"  th:text="${page}" ></a>
+        </li>
+
+        <li th:if="${pageNum < pages}"><a th:href="@{'/manageStation?pageNum='+${pageNum+1}}" aria-label="Next" th:text="下一页"><span aria-hidden="true"></span></a></li>
+
+
+
+        <!--<li th:if="${page > pageNum}"><a href="" aria-label="Previous" th:text="上一页"><span aria-hidden="true"></span></a></li>-->
+      <!--&lt;!&ndash;如果当前页等于分页&ndash;&gt;-->
+      <!--<li class="active" th:if="${page ==pageNum}" ><a href="#"  th:text="${page}"></a></li>-->
+      <!--<li th:unless="${page ==pageNum}" class="active" ><a  th:text="${page}" ></a></li>-->
+      <!--<li th:if="${page < pages}"><a href="" aria-label="Next" th:text="下一页"><span aria-hidden="true"></span></a></li>-->
+
+</ul>
+
 </nav>
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
