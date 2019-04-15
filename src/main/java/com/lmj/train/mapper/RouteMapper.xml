@@ -1,34 +1,72 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.lmj.train.mapper.RouteMapper" >
+<!--
+    //保存路线信息
+    void saveRoute(Route route);
 
-    <!--//新增站点-->
-    <insert id="addStation">
-        insert into station values(null,#{stationName})
+    int findRoutebyId(String trainName);-->
+    <insert id="saveRoute">
+        insert into route values(null,#{trainName},#{startPoint},#{endPoint},#{startTime},#{endTime},#{trainType},#{sleepBerthNums},#{seatNums},#{standNums})
     </insert>
-    <!--修改站点-->
-    <update id="updateStation">
-        update station set stationName=#{stationName} where id=#{id}
-    </update>
-    <!--删除站点-->
-    <delete id="deleteStation">
-        delete from station where id=#{id}
+    <!--//根据车次查找路线id-->
+    <select id="findRoutebyId" resultType="int">
+        select id from route where trainName = #{trainName};
+    </select>
+    <!-- //保存价格信息
+    void savePrice(Price price);-->
+    <insert id="savePrice" >
+        insert into price values(null,#{sleepBerthPrice},#{seatPrice},#{standPrice},#{rid})
+    </insert>
+    <!--
+    //查询所有路线
+    Route findAllRoute();-->
+    <select id="findAllRoute" resultType="route">
+        select * from route
+    </select>
+    <!--//根据id删除路线-->
+    <!--void deleteRouteById(int id);-->
+    <!--//根据rid删除价格-->
+    <!--void deletePriceByRid(int rid);-->
+    <delete id="deleteRouteById">
+        delete from route where id=#{id}
     </delete>
-    <!--查找站点-->
-    <select id="findStationByName" resultType="Station">
-        select * from station where stationName=#{stationName}
+    <delete id="deletePriceByRid">
+        delete from price where rid=#{rid}
+    </delete>
+    <!--//根据id查找route-->
+    <!--Route findRouteById(int id);-->
+    <!--//根据id查找price-->
+    <!--Price findPriceById(int id);-->
+    <select id="findRouteById" resultType="route">
+        select * from route where id=#{id}
     </select>
-    <!--站点分页查询-->
-    <select id="findStatinByPageHepler" resultType="station">
-        select * from station
+    <select id="findPriceById" resultType="price">
+        select * from price where rid=#{rid}
     </select>
-    <!--根据站点id查找站点名-->
-    <select id="findStationNameById" resultType="station">
-        select * from station where id=#{id}
+    <!--//根据id查找routeInfo信息-->
+    <!--RouteInfo   //根据id查找routeInfo信息
+    RouteInfo findRouteInfoById(int id);(int id);-->
+    <!--<sql id="selectRouteInfo">-->
+        <!--select r.trainName,r.id,r.startPoint,r.endPoint,r.startTime,r.endTime,r.trainType,r.sleepBerthNums,r.seatNums,r.standNums,p.sleepBerthPrice,p.seatPrice,p.standPrice  from route r ,price p where r.id=p.rid-->
+    <!--</sql>-->
+    <select id="findRouteInfoById" resultType="routeInfo">
+        select * from (select r.trainName,r.id,r.startPoint,r.endPoint,r.startTime,r.endTime,r.trainType,r.sleepBerthNums,r.seatNums,r.standNums,p.sleepBerthPrice,p.seatPrice,p.standPrice  from route r ,price p where r.id=p.rid)  as routeInfo where routeInfo.id=#{id}
     </select>
-
-
-
-
-
+    <!--//跟新路线信息-->
+    <!--void updateRouteInfo(RouteInfo routeInfo);-->
+    <update id="updateRouteInfo">
+        update route r,price p set r.trainName=#{trainName},r.startPoint=#{startPoint},r.endPoint=#{endPoint},r.startTime=#{startTime},r.endTime=#{endTime},r.trainType=#{trainType},r.sleepBerthNums=#{sleepBerthNums},r.seatNums=#{seatNums},r.standNums=#{standNums},
+                                    p.sleepBerthPrice=#{sleepBerthPrice},p.seatPrice=#{seatPrice},p.standPrice=#{standPrice} where r.trainName=#{trainName} and p.rid=#{id}
+    </update>
+    <!--//根据车次名查id-->
+    <!--int findIdByTrainName(String trainName);-->
+    <select id="findIdByTrainName" resultType="int">
+        select id from route where trainName=#{trainName}
+    </select>
+    <!--//根据id查车次-->
+    <!--String findTrainNameById(int id);-->
+    <select id="findTrainNameById" resultType="string">
+        select trainName from route where id=#{id}
+    </select>
 </mapper>

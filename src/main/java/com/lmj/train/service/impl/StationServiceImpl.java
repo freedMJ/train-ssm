@@ -1,45 +1,50 @@
 package com.lmj.train.service.impl;
 
-import com.lmj.train.mapper.RouteMapper;
+import com.lmj.train.mapper.StationMapper;
 import com.lmj.train.model.Station;
-import com.lmj.train.service.IRouteService;
+import com.lmj.train.service.IStationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class RouteImpl implements IRouteService {
+public class StationServiceImpl implements IStationService {
     @Autowired
-    private RouteMapper routeMapper;
+    private StationMapper stationMapper;
     @Override
     //新增站点
     public void addStation(String stationName) {
-        routeMapper.addStation(stationName);
+        stationMapper.addStation(stationName);
     }
     //修改站点
     @Override
     public void updateStation(String stationName,int id) {
-        routeMapper.updateStation(stationName,id);
+        stationMapper.updateStation(stationName,id);
     }
     //删除站点
     @Override
     public void deleteStation(int id) {
-        routeMapper.deleteStation(id);
+        stationMapper.deleteStation(id);
     }
     //根据名称查找站点
     @Override
     public Station findStationByName(String stationName) {
-        return routeMapper.findStationByName(stationName);
+        return stationMapper.findStationByName(stationName);
     }
     //分页查询站点
     @Override
     public List<Station> findStatinByPageHepler() {
-        return routeMapper.findStatinByPageHepler();
+        return stationMapper.findStatinByPageHepler();
     }
     //根据id查找站点名
     @Override
     public Station findStationNameById(int id) {
-        return routeMapper.findStationNameById(id);
+        return stationMapper.findStationNameById(id);
+    }
+    //查找所有的站点
+    @Override
+    public  List<Station> findAllStation() {
+        return stationMapper.findAllStation();
     }
 }

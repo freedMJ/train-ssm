@@ -10,16 +10,15 @@ public class Price {
      * rid:外键，关联route主键，表示路线的价格
      * **/
     private Integer id;
-    private Integer sleepBerthPrice;
-    private Integer seatPrice;
-    private Integer standPrice;
+    private float sleepBerthPrice;
+    private float seatPrice;
+    private float standPrice;
     private Integer rid;
 
     public Price() {
     }
 
-    public Price(Integer id, Integer sleepBerthPrice, Integer seatPrice, Integer standPrice, Integer rid) {
-        this.id = id;
+    public Price(float sleepBerthPrice, float seatPrice, float standPrice, Integer rid) {
         this.sleepBerthPrice = sleepBerthPrice;
         this.seatPrice = seatPrice;
         this.standPrice = standPrice;
@@ -34,27 +33,27 @@ public class Price {
         this.id = id;
     }
 
-    public Integer getSleepBerthPrice() {
+    public float getSleepBerthPrice() {
         return sleepBerthPrice;
     }
 
-    public void setSleepBerthPrice(Integer sleepBerthPrice) {
+    public void setSleepBerthPrice(float sleepBerthPrice) {
         this.sleepBerthPrice = sleepBerthPrice;
     }
 
-    public Integer getSeatPrice() {
+    public float getSeatPrice() {
         return seatPrice;
     }
 
-    public void setSeatPrice(Integer seatPrice) {
+    public void setSeatPrice(float seatPrice) {
         this.seatPrice = seatPrice;
     }
 
-    public Integer getStandPrice() {
+    public float getStandPrice() {
         return standPrice;
     }
 
-    public void setStandPrice(Integer standPrice) {
+    public void setStandPrice(float standPrice) {
         this.standPrice = standPrice;
     }
 
