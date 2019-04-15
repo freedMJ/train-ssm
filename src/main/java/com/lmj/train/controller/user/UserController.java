@@ -1,8 +1,11 @@
 package com.lmj.train.controller.user;
 
 import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.github.pagehelper.PageHelper;
 import com.lmj.train.model.User;
+import com.lmj.train.service.IRouteService;
 import com.lmj.train.service.IUserService;
+import com.lmj.train.utils.ConstantUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
@@ -23,11 +26,8 @@ public class UserController {
      * **/
     @Autowired
     private IUserService userService;
-
-    @RequestMapping("/index")
-    public String index(HttpServletRequest request,Model model){
-        return "index";
-    }
+    @Autowired
+    private IRouteService routeService;
     //用户登录
     @GetMapping("/login")
     public String login(Model model){
@@ -80,4 +80,5 @@ public class UserController {
        map.put("msg",msg);
        return map;
     }
+
 }

@@ -1,6 +1,5 @@
 package com.lmj.train.controller.admin;
 
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.lmj.train.model.Price;
@@ -9,9 +8,7 @@ import com.lmj.train.model.RouteInfo;
 import com.lmj.train.model.Station;
 import com.lmj.train.service.IRouteService;
 import com.lmj.train.service.IStationService;
-import com.lmj.train.service.impl.RouteServiceImpl;
-import com.lmj.train.service.impl.StationServiceImpl;
-import com.lmj.train.utils.Constant;
+import com.lmj.train.utils.ConstantUtils;
 import com.lmj.train.utils.PageNumsList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-public class RouteCollection {
+public class RouteController {
     /**
      *
      * 路线管理控制器
@@ -37,10 +34,9 @@ public class RouteCollection {
     @GetMapping("manageRoute")
     public String manageRoute(Model model,@RequestParam(name="pageNum",defaultValue = "1")int pageNum){
         //分页
-        PageHelper.startPage(pageNum, Constant.size);
+        PageHelper.startPage(pageNum, ConstantUtils.size);
         List<Route> allRoute = routeService.findAllRoute();
         PageInfo<Route> routesPageInfo = new PageInfo<Route>(allRoute);
-        System.out.println(allRoute);
         int pages = routesPageInfo.getPages();//查询总数
         //设置一个页面最多允许5个分页
         //获取时间戳

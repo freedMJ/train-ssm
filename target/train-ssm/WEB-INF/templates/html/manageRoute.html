@@ -23,9 +23,9 @@
     <h2>火车票管理系统</h2>
     </div>
   <ul class="nav nav-pills navbar-default" >
-  <li role="presentation"  ><a href="#">大厅</a></li>
-  <li role="presentation" ><a href="buyTicketContre.html">购票中心</a></li>
-  <li role="presentation" ><a href="userContre.html">个人中心</a></li>
+  <li role="presentation"  ><a href="/index">大厅</a></li>
+  <li role="presentation" ><a href="/buyTicketContre">购票中心</a></li>
+  <li role="presentation" ><a href="/userContre">个人中心</a></li>
     <div th:include="login_isAdmin::headHtml" class="active"></div>
 
   </ul>
@@ -50,9 +50,9 @@
       <td th:text="${route.endPoint}"></td>
       <td th:text="${#dates.format((route.startTime*1000),'yyyy-MM-dd HH:mm:ss')}"></td>
       <td th:text="${#dates.format((route.endTime)*1000,'yyyy-MM-dd HH:mm:ss')}"></td>
-      <td th:if="${currentTimeStamp>(route.endTime)*1000}" style="color: green">已抵达</td>
-      <!--<td th:if="${currentTimeStamp>route.startTime and currentTimeStamp<(route.endTime)*1000}" style="color: green">已发车</td>-->
-      <td th:if="${currentTimeStamp<(route.endTime)*1000}" style="color: red" >未抵达</td>
+      <td th:if="${currentTimeStamp<(route.startTime)*1000}" style="color: green">未发车</td>
+      <td th:if="${(route.startTime)*1000<currentTimeStamp and currentTimeStamp<(route.endTime)*1000}" style="color: red" >未抵达</td>
+      <td th:if="${currentTimeStamp>(route.endTime)*1000}" style="color: blue" >已失效</td>
        <td><a th:href="@{'/updateRoute?id='+${route.id}}" ><span>修改</span></a>&nbsp&nbsp<a a th:href="@{'/deleteRoute?id='+${route.id}}" ><span>删除</span></a></td>
     </tr>
 </table>

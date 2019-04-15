@@ -22,12 +22,15 @@
     //查询所有路线
     Route findAllRoute();-->
     <select id="findAllRoute" resultType="route">
-        select * from route
+        select * from route order by  startTime
+    </select>
+    <!--//查询抵达时间小于30分钟的路线-->
+    <!--List<Route> findAllRouteByLessTime(Long time);-->
+    <select id="findAllRouteByLessTime" resultType="route">
+        select * from route where endTime &gt;=#{time} or startTime &gt;=#{time} or endTime &gt;= #{currentTime} order by  startTime
     </select>
     <!--//根据id删除路线-->
-    <!--void deleteRouteById(int id);-->
     <!--//根据rid删除价格-->
-    <!--void deletePriceByRid(int rid);-->
     <delete id="deleteRouteById">
         delete from route where id=#{id}
     </delete>
@@ -35,9 +38,7 @@
         delete from price where rid=#{rid}
     </delete>
     <!--//根据id查找route-->
-    <!--Route findRouteById(int id);-->
     <!--//根据id查找price-->
-    <!--Price findPriceById(int id);-->
     <select id="findRouteById" resultType="route">
         select * from route where id=#{id}
     </select>
@@ -47,9 +48,7 @@
     <!--//根据id查找routeInfo信息-->
     <!--RouteInfo   //根据id查找routeInfo信息
     RouteInfo findRouteInfoById(int id);(int id);-->
-    <!--<sql id="selectRouteInfo">-->
-        <!--select r.trainName,r.id,r.startPoint,r.endPoint,r.startTime,r.endTime,r.trainType,r.sleepBerthNums,r.seatNums,r.standNums,p.sleepBerthPrice,p.seatPrice,p.standPrice  from route r ,price p where r.id=p.rid-->
-    <!--</sql>-->
+
     <select id="findRouteInfoById" resultType="routeInfo">
         select * from (select r.trainName,r.id,r.startPoint,r.endPoint,r.startTime,r.endTime,r.trainType,r.sleepBerthNums,r.seatNums,r.standNums,p.sleepBerthPrice,p.seatPrice,p.standPrice  from route r ,price p where r.id=p.rid)  as routeInfo where routeInfo.id=#{id}
     </select>
@@ -68,5 +67,13 @@
     <!--String findTrainNameById(int id);-->
     <select id="findTrainNameById" resultType="string">
         select trainName from route where id=#{id}
+    </select>
+    <!--//查询所有未发车的列车-->
+    <!--RouteInfo findAllNotStartTrain(Long time);-->
+    <sql id="selectRouteInfo">
+        r.trainName,r.id,r.startPoint,r.endPoint,r.startTime,r.endTime,r.trainType,r.sleepBerthNums,r.seatNums,r.standNums,p.sleepBerthPrice,p.seatPrice,p.standPrice
+    </sql>
+    <select id="findAllNotStartTrain" resultType="routeInfo">
+        select * from  (select r.trainName,r.id,r.startPoint,r.endPoint,r.startTime,r.endTime,r.trainType,r.sleepBerthNums,r.seatNums,r.standNums,p.sleepBerthPrice,p.seatPrice,p.standPrice from route r, price p where r.id=p.rid) as s where s.startTime &gt; #{time} order by  startTime
     </select>
 </mapper>

@@ -22,9 +22,9 @@
     <h2>火车票管理系统</h2>
     </div>
   <ul class="nav nav-pills navbar-default">
-  <li role="presentation" ><a href="index.html">大厅</a></li>
+  <li role="presentation" ><a href="/index">大厅</a></li>
   <li role="presentation" class="active"><a href="#">购票中心</a></li>
-  <li role="presentation" ><a href="userContre.html">个人中心</a></li>
+  <li role="presentation" ><a href="/userContre">个人中心</a></li>
       <div th:include="login_isAdmin::headHtml"></div>
   </ul>
   <table class="table">
@@ -42,118 +42,42 @@
       <td>站票</td>
       <td>是否购买</td>
     </tr>
-     <tr>
-      <td>1</td>
-      <td>普通列车</td>
-      <td>dk1313123</td>  
-      <td>武汉</td>  
-      <td>上海</td>  
-      <td>2019-3-12 12:00:12</td>    
-      <td>2019-3-12 22:12:12</td>
-      <td>未发车</td>
-      <td>剩余29</td>
-      <td>无</td>
-      <td>剩余100</td>
-      <td><a href="buyTrain.html">购买</a></td>
-    </tr>
-     <tr>
-      <td>1</td>
-      <td>普通列车</td>
-      <td>dk1313123</td>  
-      <td>武汉</td>  
-      <td>上海</td>  
-      <td>2019-3-12 12:00:12</td>    
-      <td>2019-3-12 22:12:12</td>
-      <td>未发车</td>
-      <td>剩余29</td>
-      <td>无</td>
-      <td>剩余100</td>
-      <td>购买</td>
-    </tr>
-     <tr>
-      <td>1</td>
-      <td>普通列车</td>
-      <td>dk1313123</td>  
-      <td>武汉</td>  
-      <td>上海</td>  
-      <td>2019-3-12 12:00:12</td>    
-      <td>2019-3-12 22:12:12</td>
-      <td>未发车</td>
-      <td>剩余29</td>
-      <td>无</td>
-      <td>剩余100</td>
-      <td>购买</td>
-    </tr>
-     <tr>
-      <td>1</td>
-      <td>普通列车</td>
-      <td>dk1313123</td>  
-      <td>武汉</td>  
-      <td>上海</td>  
-      <td>2019-3-12 12:00:12</td>    
-      <td>2019-3-12 22:12:12</td>
-      <td>未发车</td>
-      <td>剩余29</td>
-      <td>无</td>
-      <td>剩余100</td>
-      <td>购买</td>
-    </tr>
-     <tr>
-      <td>1</td>
-      <td>普通列车</td>
-      <td>dk1313123</td>  
-      <td>武汉</td>  
-      <td>上海</td>  
-      <td>2019-3-12 12:00:12</td>    
-      <td>2019-3-12 22:12:12</td>
-      <td>未发车</td>
-      <td>剩余29</td>
-      <td>无</td>
-      <td>剩余100</td>
-      <td>购买</td>
-    </tr>
-     <tr>
-      <td>1</td>
-      <td>普通列车</td>
-      <td>dk1313123</td>  
-      <td>武汉</td>  
-      <td>上海</td>  
-      <td>2019-3-12 12:00:12</td>    
-      <td>2019-3-12 22:12:12</td>
-      <td>未发车</td>
-      <td>剩余29</td>
-      <td>无</td>
-      <td>剩余100</td>
-      <td>购买</td>
-    </tr>
-     <tr>
-      <td>1</td>
-      <td>普通列车</td>
-      <td>dk1313123</td>  
-      <td>武汉</td>  
-      <td>上海</td>  
-      <td>2019-3-12 12:00:12</td>    
-      <td>2019-3-12 22:12:12</td>
-      <td>未发车</td>
-      <td>剩余29</td>
-      <td>无</td>
-      <td>剩余100</td>
-      <td>购买</td>
-    </tr>
-   
-</table>
-<nav aria-label="...">
-  <ul class="pagination">
-    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
-    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-    <li ><a href="#">2 <span class="sr-only">(current)</span></a></li>
-    <li ><a href="#">3 <span class="sr-only">(current)</span></a></li>
-    <li ><a href="#">4 <span class="sr-only">(current)</span></a></li>
-    <li><a href="#">5 <span class="sr-only">(current)</span></a></li>
-    <li ><a href="#">6 <span class="sr-only">(current)</span></a></li>
-    <li ><a href="#" aria-label="Previous"><span aria-hidden="true">下一页</span></a></li>
-  </ul>
-</nav>
+      <tr th:each="route,routeStat:${routesPageInfo.list}">
+          <td th:text="${routeStat.index}"></td>
+          <td th:if="${route.trainType==0}">高铁</td>
+          <td th:if="${route.trainType==1}">普通火车</td>
+          <td th:text="${route.trainName}"></td>
+          <td th:text="${route.startPoint}"></td>
+          <td th:text="${route.endPoint}"></td>
+          <td th:text="${#dates.format((route.startTime)*1000,'yyyy-MM-dd HH:mm:ss')}"></td>
+          <td th:text="${#dates.format((route.endTime)*1000,'yyyy-MM-dd HH:mm:ss')}"></td>
+          <!--显示座位-->
+          <td th:if="${currentTimeStamp<(route.startTime)}" style="color: green">未发车</td>
+          <td th:if="${(route.startTime)<currentTimeStamp }" style="color: red" >已发车</td>
+          <td th:text="${route.sleepBerthNums}" th:if="${route.sleepBerthNums>0}"></td>
+          <td  th:if="${route.sleepBerthNums=0}">无</td>
+          <td th:text="${route.seatNums}" th:if="${route.seatNums>0}"></td>
+          <td  th:if="${route.seatNums=0}">无</td>
+          <td th:text="${route.standNums}" th:if="${route.standNums>0}"></td>
+          <td  th:if="${route.standNums=0}">无</td>
+         <!--是否购买-->
+          <td th:if="${(route.startTime-canByTrainTime)>currentTimeStamp}"><a th:href="@{'/buyTrain?id='+${route.id}}" >购票</a></td>
+          <td th:unless="${(route.startTime-canByTrainTime)>currentTimeStamp}"><a style="text-decoration:none;color:red;">暂停售票</a></td>
+
+      </tr>
+  </table>
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination" >
+            <li th:if="${pageNum -1>0}"><a th:href="@{'/buyTicketContre?pageNum='+${pageNum-1}}" aria-label="Previous" th:text="上一页"><span aria-hidden="true"></span></a></li>
+            <!--如果当前页等于分页-->
+            <li th:each="page,pageStat:${pageNumArray}" >
+                <a th:if="${page ==pageNum}"  href="/buyTicketContre#" th:text="${page}" ></a>
+                <a th:unless="${page ==pageNum}"  th:href="@{'/buyTicketContre?pageNum='+${page}}"  th:text="${page}" ></a>
+            </li>
+            <li th:if="${pageNum < pages}"><a th:href="@{'/buyTicketContre?pageNum='+${pageNum+1}}" aria-label="Next" th:text="下一页"><span aria-hidden="true"></span></a></li>
+        </ul>
+    </nav>
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
