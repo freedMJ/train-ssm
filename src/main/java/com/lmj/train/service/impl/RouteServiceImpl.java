@@ -38,6 +38,11 @@ public class RouteServiceImpl implements IRouteService {
     public List<Route> findAllRoute() {
         return routeMapper.findAllRoute();
     }
+    //查询抵达时间小于某段时间内的路线
+    @Override
+    public List<Route> findAllRouteByLessTime(Long time,Long currentTime) {
+        return routeMapper.findAllRouteByLessTime(time, currentTime);
+    }
 
     //根据id删除路线
     @Override
@@ -81,5 +86,10 @@ public class RouteServiceImpl implements IRouteService {
     @Override
     public String findTrainNameById(int id) {
         return routeMapper.findTrainNameById(id);
+    }
+    //查询所有未发车的列车
+    @Override
+    public List<RouteInfo> findAllNotStartTrain(Long time) {
+        return routeMapper.findAllNotStartTrain(time);
     }
 }

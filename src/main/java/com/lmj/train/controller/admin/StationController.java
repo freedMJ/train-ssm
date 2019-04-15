@@ -2,10 +2,9 @@ package com.lmj.train.controller.admin;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.lmj.train.mapper.StationMapper;
 import com.lmj.train.model.Station;
 import com.lmj.train.service.IStationService;
-import com.lmj.train.utils.Constant;
+import com.lmj.train.utils.ConstantUtils;
 import com.lmj.train.utils.PageNumsList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,7 +29,7 @@ public class StationController {
     @GetMapping("manageStation")
     public String manageStation(Model model,@RequestParam(name = "pageNum",defaultValue = "1")int pageNum){
         //分页
-        int pageSize= Constant.size;
+        int pageSize= ConstantUtils.size;
         PageHelper.startPage(pageNum,pageSize);
         List<Station> stationList = stationService.findStatinByPageHepler();
         PageInfo<Station> stationPageInfo = new PageInfo<Station>(stationList);
