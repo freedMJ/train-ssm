@@ -16,6 +16,7 @@
       <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
     <![endif]-->
+
   </head>
   <body>
     <div style="text-align: center;">
@@ -40,85 +41,33 @@
       <td>状态</td>
       <td>管理</td>
     </tr>
-    <tr>
-      <td>1</td>
-      <td>普通列车</td>
-      <td>dk1313123</td>  
-      <td>武汉</td>  
-      <td>上海</td>  
-      <td>2019-3-12 12:00:12</td>    
-      <td>2019-3-12 22:12:12</td>
-      <td>未发车</td>
-       <td><a href="saveRoute.html"><span>修改</span></a>&nbsp&nbsp<a href="#"><span>删除</span></td></a>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>普通列车</td>
-      <td>dk1313123</td>  
-      <td>武汉</td>  
-      <td>上海</td>  
-      <td>2019-3-12 12:00:12</td>    
-      <td>2019-3-12 22:12:12</td>
-      <td>未发车</td>
-        <td><a href="saveRoute.html"><span>修改</span></a>&nbsp&nbsp<a href="#"><span>删除</span></td></a>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>普通列车</td>
-      <td>dk1313123</td>  
-      <td>武汉</td>  
-      <td>上海</td>  
-      <td>2019-3-12 12:00:12</td>    
-      <td>2019-3-12 22:12:12</td>
-      <td>未发车</td>
-       <td><a href="saveRoute.html"><span>修改</span></a>&nbsp&nbsp<a href="#"><span>删除</span></td></a>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>普通列车</td>
-      <td>dk1313123</td>  
-      <td>武汉</td>  
-      <td>上海</td>  
-      <td>2019-3-12 12:00:12</td>    
-      <td>2019-3-12 22:12:12</td>
-      <td>未发车</td>
-      <td><a href="saveRoute.html"><span>修改</span></a>&nbsp&nbsp<a href="#"><span>删除</span></td></a>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>普通列车</td>
-      <td>dk1313123</td>  
-      <td>武汉</td>  
-      <td>上海</td>  
-      <td>2019-3-12 12:00:12</td>    
-      <td>2019-3-12 22:12:12</td>
-      <td>未发车</td>
-       <td><a href="saveRoute.html"><span>修改</span></a>&nbsp&nbsp<a href="#"><span>删除</span></td></a>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>普通列车</td>
-      <td>dk1313123</td>  
-      <td>武汉</td>  
-      <td>上海</td>  
-      <td>2019-3-12 12:00:12</td>    
-      <td>2019-3-12 22:12:12</td>
-      <td>未发车</td>
-       <td><a href="saveRoute.html"><span>修改</span></a>&nbsp&nbsp<a href="#"><span>删除</span></td></a>
+    <tr th:each="route,routeStat:${routesPageInfo.list}">
+      <td th:text="${routeStat.index}"></td>
+      <td th:if="${route.trainType==0}">高铁</td>
+      <td th:if="${route.trainType==1}">普通火车</td>
+      <td th:text="${route.trainName}"></td>
+      <td th:text="${route.startPoint}"></td>
+      <td th:text="${route.endPoint}"></td>
+      <td th:text="${#dates.format((route.startTime*1000),'yyyy-MM-dd HH:mm:ss')}"></td>
+      <td th:text="${#dates.format((route.endTime)*1000,'yyyy-MM-dd HH:mm:ss')}"></td>
+      <td th:if="${currentTimeStamp>(route.endTime)*1000}" style="color: green">已抵达</td>
+      <!--<td th:if="${currentTimeStamp>route.startTime and currentTimeStamp<(route.endTime)*1000}" style="color: green">已发车</td>-->
+      <td th:if="${currentTimeStamp<(route.endTime)*1000}" style="color: red" >未抵达</td>
+       <td><a th:href="@{'/updateRoute?id='+${route.id}}" ><span>修改</span></a>&nbsp&nbsp<a a th:href="@{'/deleteRoute?id='+${route.id}}" ><span>删除</span></a></td>
     </tr>
 </table>
-<nav aria-label="...">
-  <ul class="pagination">
-    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
-    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-    <li ><a href="#">2 <span class="sr-only">(current)</span></a></li>
-    <li ><a href="#">3 <span class="sr-only">(current)</span></a></li>
-    <li ><a href="#">4 <span class="sr-only">(current)</span></a></li>
-    <li><a href="#">5 <span class="sr-only">(current)</span></a></li>
-    <li ><a href="#">6 <span class="sr-only">(current)</span></a></li>
-    <li ><a href="#" aria-label="Previous"><span aria-hidden="true">下一页</span></a></li>
-  </ul>
-</nav>
+
+    <nav aria-label="Page navigation">
+      <ul class="pagination" >
+        <li th:if="${pageNum -1>0}"><a th:href="@{'/manageRoute?pageNum='+${pageNum-1}}" aria-label="Previous" th:text="上一页"><span aria-hidden="true"></span></a></li>
+        <!--如果当前页等于分页-->
+        <li th:each="page,pageStat:${pageNumArray}" >
+          <a th:if="${page ==pageNum}"  href="/manageRoute#" th:text="${page}" ></a>
+          <a th:unless="${page ==pageNum}"  th:href="@{'/manageRoute?pageNum='+${page}}"  th:text="${page}" ></a>
+        </li>
+        <li th:if="${pageNum < pages}"><a th:href="@{'/manageRoute?pageNum='+${pageNum+1}}" aria-label="Next" th:text="下一页"><span aria-hidden="true"></span></a></li>
+      </ul>
+    </nav>
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->

@@ -1,34 +1,38 @@
 package com.lmj.train.model;
 
-public class Route {
-    /**
-     * 路线表
-     * id:主键，自增类型,唯一标识，int类型，不为空；
-     * trainName:车次信息；jd134da1,string
+public class RouteInfo {
+    /** trainName:车次信息；jd134da1,string
      * startPoint:起始站，varchar类型，不为空；
-     * endPoint:终点站，varchar类型，不为空
+            * endPoint:终点站，varchar类型，不为空
      * startTime:发车时间，timestamp类型，不为空；
-     * endTime:抵达时间，timestamp类型，不为空；
-     * trainType:火车类型，int类型，0为高铁，1为普通列车；
-     * sleepBerthNums:卧铺数
+            * endTime:抵达时间，timestamp类型，不为空；
+            * trainType:火车类型，int类型，0为高铁，1为普通列车；
+            * sleepBerthNums:卧铺数
      * seatNums:硬座
      * standNums:站票
+     * * sleepBerthPrice:卧票价格
+     *      * seatPrice:坐票价格
+     *      * standPrice：站票价格
      * */
-    private Integer id;
+    private int id;
     private String trainName;
     private String startPoint;
     private String endPoint;
     private Long startTime;
     private Long endTime;
-    private Integer trainType;
-    private Integer sleepBerthNums;
-    private Integer seatNums;
-    private Integer standNums;
+    private int trainType;
+    private int sleepBerthNums;
+    private int seatNums;
+    private int standNums;
+    private float sleepBerthPrice;
+    private float seatPrice;
+    private float standPrice;
 
-    public Route() {
+    public RouteInfo() {
     }
 
-    public Route( String trainName, String startPoint, String endPoint, Long startTime, Long endTime, Integer trainType, Integer sleepBerthNums, Integer seatNums, Integer standNums) {
+    public RouteInfo(int id, String trainName, String startPoint, String endPoint, Long startTime, Long endTime, int trainType, int sleepBerthNums, int seatNums, int standNums, float sleepBerthPrice, float seatPrice, float standPrice) {
+        this.id = id;
         this.trainName = trainName;
         this.startPoint = startPoint;
         this.endPoint = endPoint;
@@ -38,13 +42,16 @@ public class Route {
         this.sleepBerthNums = sleepBerthNums;
         this.seatNums = seatNums;
         this.standNums = standNums;
+        this.sleepBerthPrice = sleepBerthPrice;
+        this.seatPrice = seatPrice;
+        this.standPrice = standPrice;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -88,41 +95,65 @@ public class Route {
         this.endTime = endTime;
     }
 
-    public Integer getTrainType() {
+    public int getTrainType() {
         return trainType;
     }
 
-    public void setTrainType(Integer trainType) {
+    public void setTrainType(int trainType) {
         this.trainType = trainType;
     }
 
-    public Integer getSleepBerthNums() {
+    public int getSleepBerthNums() {
         return sleepBerthNums;
     }
 
-    public void setSleepBerthNums(Integer sleepBerthNums) {
+    public void setSleepBerthNums(int sleepBerthNums) {
         this.sleepBerthNums = sleepBerthNums;
     }
 
-    public Integer getSeatNums() {
+    public int getSeatNums() {
         return seatNums;
     }
 
-    public void setSeatNums(Integer seatNums) {
+    public void setSeatNums(int seatNums) {
         this.seatNums = seatNums;
     }
 
-    public Integer getStandNums() {
+    public int getStandNums() {
         return standNums;
     }
 
-    public void setStandNums(Integer standNums) {
+    public void setStandNums(int standNums) {
         this.standNums = standNums;
+    }
+
+    public float getSleepBerthPrice() {
+        return sleepBerthPrice;
+    }
+
+    public void setSleepBerthPrice(float sleepBerthPrice) {
+        this.sleepBerthPrice = sleepBerthPrice;
+    }
+
+    public float getSeatPrice() {
+        return seatPrice;
+    }
+
+    public void setSeatPrice(float seatPrice) {
+        this.seatPrice = seatPrice;
+    }
+
+    public float getStandPrice() {
+        return standPrice;
+    }
+
+    public void setStandPrice(float standPrice) {
+        this.standPrice = standPrice;
     }
 
     @Override
     public String toString() {
-        return "Route{" +
+        return "RouteInfo{" +
                 "id=" + id +
                 ", trainName='" + trainName + '\'' +
                 ", startPoint='" + startPoint + '\'' +
@@ -133,6 +164,9 @@ public class Route {
                 ", sleepBerthNums=" + sleepBerthNums +
                 ", seatNums=" + seatNums +
                 ", standNums=" + standNums +
+                ", sleepBerthPrice=" + sleepBerthPrice +
+                ", seatPrice=" + seatPrice +
+                ", standPrice=" + standPrice +
                 '}';
     }
 }

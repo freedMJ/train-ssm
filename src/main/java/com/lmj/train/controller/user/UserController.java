@@ -17,6 +17,10 @@ import java.util.Map;
 
 @Controller
 public class UserController {
+    /**
+     *
+     * 用户控制器
+     * **/
     @Autowired
     private IUserService userService;
 
@@ -36,7 +40,6 @@ public class UserController {
         String msg=null;
         if(relUser!=null){
             msg="ok";
-
             HttpSession session = request.getSession();
             session.setAttribute("user",user.getUsername());
             session.setAttribute("userType",user.getType());
@@ -58,7 +61,6 @@ public class UserController {
     //用户注册
     @GetMapping("/register")
     public String register(){
-
         return "register";
     }
     @PostMapping("/register")
@@ -66,20 +68,16 @@ public class UserController {
     public Map<String,String>  register(Model model, @RequestBody User user){
         String username = user.getUsername();
         String msg=null;
-        System.out.println("aaaa");
        int isUser = userService.getUserByName(username);
        if(isUser==0){
            msg="注册成功，请返回进行登陆或返回首页";
            user.setType(1);
            userService.registerUser(user);
-
        }else{
            msg="该用户已经存在";
        }
         Map<String,String> map =new HashMap<String, String>();
        map.put("msg",msg);
        return map;
-
     }
-
 }
