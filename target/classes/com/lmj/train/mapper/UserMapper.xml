@@ -14,6 +14,22 @@
     </select>
     <!--用户登录-->
     <select id="loginUser" resultType="com.lmj.train.model.User">
-        select * from user where username=#{username} and password=#{password} and type=#{type};
+        select u.username,u.id,u.type from user u where username=#{username} and password=#{password} and type=#{type};
     </select>
+    <!--//存订单信息-->
+    <!--void saveOrderInfo(Order order);-->
+    <insert id="saveOrderInfo">
+        insert into orders values(null,#{uid},#{rid},#{payStatus},#{placeType},#{price});
+    </insert>
+    <!--//根据uid,rid查找订单-->
+    <!--Order findOrderByUidAndRid(int uid,int rid);-->
+    <select id="findOrderByUidAndRid" resultType="orders">
+        select * from orders where uid=#{uid} and rid=#{rid}
+    </select>
+    <!--//根据uid查找订单-->
+    <!--OrderInfo findOrderInfoByOUid(int uid);-->
+    <select id="findOrderByUid" resultType="orders">
+        select * from orders o where o.uid=#{uid}
+    </select>
+
 </mapper>

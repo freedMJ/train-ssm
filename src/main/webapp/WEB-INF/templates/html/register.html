@@ -122,7 +122,7 @@
         var Mobile_Boolean = false;
         var idCard_Boolean=false;
         $('.reg_user').blur(function(){
-            if ((/^[a-z0-9_-]{4,8}$/).test($(".reg_user").val())){
+            if ((/^[a-z0-9_-]{3,8}$/).test($(".reg_user").val())){
                 $('.user_hint').html("✔").css("color","green");
                 user_Boolean = true;
             }else {

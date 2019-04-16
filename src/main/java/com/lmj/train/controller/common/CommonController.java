@@ -3,18 +3,19 @@ package com.lmj.train.controller.common;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.lmj.train.model.Route;
-import com.lmj.train.model.RouteInfo;
+import com.lmj.train.model.User;
+import com.lmj.train.model.pojo.OrderInfo;
+import com.lmj.train.model.pojo.RouteInfo;
 import com.lmj.train.service.IRouteService;
 import com.lmj.train.utils.ConstantUtils;
 import com.lmj.train.utils.PageNumsList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.List;
 
@@ -67,22 +68,15 @@ public class CommonController {
         model.addAttribute("pageNumArray",pageNumArray);
         model.addAttribute("pageNum",pageNum);
         model.addAttribute("pages",pages);
+        //从订单表中查找座位详情
+
         return "buyTicketContre";
     }
-    //支付页面
-    @GetMapping("buyTrain")
-    public String buyTrain(int id){
-
-        return "buyTrain";
-    }
 
 
 
 
 
-    //用户中心
-    @GetMapping("/userContre")
-    public String userContre(){
-        return "userContre";
-    }
+
+
 }

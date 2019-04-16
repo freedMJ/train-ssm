@@ -76,4 +76,19 @@
     <select id="findAllNotStartTrain" resultType="routeInfo">
         select * from  (select r.trainName,r.id,r.startPoint,r.endPoint,r.startTime,r.endTime,r.trainType,r.sleepBerthNums,r.seatNums,r.standNums,p.sleepBerthPrice,p.seatPrice,p.standPrice from route r, price p where r.id=p.rid) as s where s.startTime &gt; #{time} order by  startTime
     </select>
+    <!--//路线表卧铺减一-->
+    <!--void routeSleepBerthNumsLessOne();-->
+    <!--//路线表硬座减一-->
+    <!--void routeSeatNumsLessOne();-->
+    <!--//路线表站票减一-->
+    <!--void routeStandNumsLessOne();-->
+    <update id="routeSleepBerthNumsLessOne">
+        update  route set sleepBerthNums=sleepBerthNums-1 where id=#{id}
+    </update>
+    <update id="routeSeatNumsLessOne">
+        update  route set seatNums=seatNums-1 where id=#{id}
+    </update>
+    <update id="routeStandNumsLessOne">
+        update  route set standNums=standNums-1 where id=#{id}
+    </update>
 </mapper>

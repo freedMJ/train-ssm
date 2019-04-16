@@ -1,4 +1,4 @@
-package com.lmj.train.model;
+package com.lmj.train.model.pojo;
 
 public class RouteInfo {
     /** trainName:车次信息；jd134da1,string

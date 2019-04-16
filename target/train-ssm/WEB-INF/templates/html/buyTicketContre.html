@@ -37,9 +37,9 @@
       <td>发车时间</td>    
       <td>抵达时间</td>
       <td>状态</td>
-      <td>卧铺</td>
-      <td>硬座</td>
-      <td>站票</td>
+      <td>剩余卧铺</td>
+      <td>剩余硬座</td>
+      <td>剩余站票</td>
       <td>是否购买</td>
     </tr>
       <tr th:each="route,routeStat:${routesPageInfo.list}">
@@ -55,14 +55,18 @@
           <td th:if="${currentTimeStamp<(route.startTime)}" style="color: green">未发车</td>
           <td th:if="${(route.startTime)<currentTimeStamp }" style="color: red" >已发车</td>
           <td th:text="${route.sleepBerthNums}" th:if="${route.sleepBerthNums>0}"></td>
-          <td  th:if="${route.sleepBerthNums=0}">无</td>
+          <td  th:if="${route.sleepBerthNums==0}">无</td>
           <td th:text="${route.seatNums}" th:if="${route.seatNums>0}"></td>
-          <td  th:if="${route.seatNums=0}">无</td>
+          <td  th:if="${route.seatNums==0}">无</td>
           <td th:text="${route.standNums}" th:if="${route.standNums>0}"></td>
-          <td  th:if="${route.standNums=0}">无</td>
+          <td  th:if="${route.standNums==0}">无</td>
          <!--是否购买-->
-          <td th:if="${(route.startTime-canByTrainTime)>currentTimeStamp}"><a th:href="@{'/buyTrain?id='+${route.id}}" >购票</a></td>
-          <td th:unless="${(route.startTime-canByTrainTime)>currentTimeStamp}"><a style="text-decoration:none;color:red;">暂停售票</a></td>
+          <td >
+              <a th:if="${(route.startTime-canByTrainTime)>currentTimeStamp}" th:href="@{'/buyTrain?id='+${route.id}}" >购票</a>
+              <a th:if="${(route.startTime-canByTrainTime)<currentTimeStamp or (route.sleepBerthNums<=0 and route.seatNums<=0 and route.standNums<=0)} " style="text-decoration:none;color:red;">暂停售票</a>
+
+          </td>
+          <!--<td th:unless="${(route.startTime-canByTrainTime)>currentTimeStamp} "><a style="text-decoration:none;color:red;">暂停售票</a></td>-->
 
       </tr>
   </table>
