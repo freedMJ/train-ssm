@@ -7,60 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="649ee341-0dd8-4de9-b974-931f4fc229ef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lmj/train/model/Orders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lmj/train/model/pojo/OrderInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/successBuyTrain.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lmj/train/interceptor/LoginInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lmj/train/controller/admin/RouteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lmj/train/controller/admin/RouteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lmj/train/controller/common/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lmj/train/controller/common/CommonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lmj/train/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lmj/train/controller/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lmj/train/mapper/RouteMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lmj/train/mapper/RouteMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lmj/train/mapper/RouteMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lmj/train/mapper/RouteMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lmj/train/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lmj/train/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lmj/train/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lmj/train/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lmj/train/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lmj/train/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lmj/train/model/RouteInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lmj/train/model/pojo/RouteInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lmj/train/service/IRouteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lmj/train/service/IRouteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lmj/train/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lmj/train/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lmj/train/service/impl/RouteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lmj/train/service/impl/RouteServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lmj/train/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lmj/train/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/demo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/demo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/jquery-2.1.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/jquery-2.1.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/buyTicketContre.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/buyTicketContre.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/buyTrain.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/buyTrain.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/userContre.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/userContre.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lmj/train/controller/admin/RouteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lmj/train/controller/admin/RouteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lmj/train/controller/common/CommonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lmj/train/controller/common/CommonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/springmvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lmj/train/controller/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lmj/train/controller/user/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lmj/train/mapper/RouteMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lmj/train/mapper/RouteMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lmj/train/mapper/RouteMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lmj/train/mapper/RouteMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lmj/train/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lmj/train/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lmj/train/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lmj/train/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lmj/train/model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lmj/train/model/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lmj/train/model/RouteInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lmj/train/service/IRouteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lmj/train/service/IRouteService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lmj/train/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lmj/train/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lmj/train/service/impl/RouteServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lmj/train/service/impl/RouteServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lmj/train/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lmj/train/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/controller/admin/RouteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/controller/admin/RouteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/controller/common/CommonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/controller/common/CommonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springmvc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/controller/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/controller/user/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/mapper/RouteMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/mapper/RouteMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/mapper/RouteMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/mapper/RouteMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/model/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/model/RouteInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/service/IRouteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/service/IRouteService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/service/impl/RouteServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/service/impl/RouteServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/com/lmj/train/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/static/css/demo.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/train-ssm/WEB-INF/static/css/demo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/static/js/jquery-2.1.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/train-ssm/WEB-INF/static/js/jquery-2.1.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/templates/html/buyTrain.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/train-ssm/WEB-INF/templates/html/buyTrain.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/templates/html/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/train-ssm/WEB-INF/templates/html/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/templates/html/userContre.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/train-ssm/WEB-INF/templates/html/userContre.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/train-ssm/WEB-INF/classes/springmvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/train-ssm/WEB-INF/templates/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/train-ssm/WEB-INF/templates/html/login.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -78,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/controller/common/CommonController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-133">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="-112">
+              <caret line="52" column="35" lean-forward="true" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,8 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/controller/user/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="43" column="51" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
+            <state relative-caret-position="197">
+              <caret line="64" column="26" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#register#1;class#UserController#0" />
@@ -101,25 +57,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/login_isAdmin.html">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/controller/admin/RouteController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding>
-                <element signature="n#style#0;n#li#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#1;n#div#2;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/mapper/UserMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+            <state relative-caret-position="-8">
+              <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -128,15 +69,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/index.html">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/controller/admin/StationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="42" column="39" lean-forward="true" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
-              <folding>
-                <element signature="n#style#0;n#td#8;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#9;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#10;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -151,36 +87,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/mapper/RouteMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="44" column="39" lean-forward="true" selection-start-line="39" selection-start-column="3" selection-end-line="44" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/service/impl/RouteServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="106" column="13" lean-forward="true" selection-start-line="106" selection-start-column="13" selection-end-line="106" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2441#2442#0" expanded="true" />
-                <element signature="e#2467#2468#0" expanded="true" />
-                <element signature="e#2574#2575#0" expanded="true" />
-                <element signature="e#2604#2605#0" expanded="true" />
-                <element signature="e#2706#2707#0" expanded="true" />
-                <element signature="e#2732#2733#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/buyTicketContre.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
@@ -193,14 +99,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/service/IRouteService.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/interceptor/LoginInterceptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+            <state relative-caret-position="380">
+              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/springmvc.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="542">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1206">
+              <caret line="66" column="6" lean-forward="true" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3715">
+              <caret line="305" column="7" lean-forward="true" selection-start-line="305" selection-start-column="7" selection-end-line="305" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -222,6 +155,7 @@
       <find>trainNums</find>
       <find>img</find>
       <find>Starry</find>
+      <find>session</find>
     </findStrings>
     <replaceStrings>
       <replace>trainName</replace>
@@ -233,9 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/controller/useraaa.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/login_isAdmin.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/model/Station.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -254,7 +185,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/model/Price.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/model/RouteInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/controller/admin/RouteCollection.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/controller/admin/RouteController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/addStation.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/manageRoute.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/manageStation.html" />
@@ -271,7 +201,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/buyTrain.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/jquery-2.1.1.min.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/demo.css" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/controller/common/CommonController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/model/Orders.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/service/IUserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/service/impl/UserServiceImpl.java" />
@@ -281,9 +210,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/mapper/RouteMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/service/IRouteService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/service/impl/RouteServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/controller/user/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/mapper/UserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/buyTicketContre.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/controller/common/CommonController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/controller/admin/RouteController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/controller/user/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/login.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/springmvc.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lmj/train/interceptor/LoginInterceptor.java" />
       </list>
     </option>
   </component>
@@ -303,7 +237,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-15" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
@@ -394,44 +328,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="train-ssm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="train-ssm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="train-ssm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="train-ssm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="train-ssm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="train-ssm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="train-ssm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="train-ssm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="interceptor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="train-ssm" type="b2602c69:ProjectViewProjectNode" />
@@ -485,7 +382,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555414285212" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555417563375" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -691,12 +588,12 @@
       <workItem from="1555252268830" duration="16519000" />
       <workItem from="1555292176769" duration="7063000" />
       <workItem from="1555318294280" duration="9563000" />
-      <workItem from="1555366309525" duration="19257000" />
+      <workItem from="1555366309525" duration="22065000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168862000" />
+    <option name="totallyTimeSpent" value="171670000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -723,14 +620,14 @@
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32956153" />
       <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.50067025" side_tool="true" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Messages" order="4" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.3286119" />
       <window_info anchor="bottom" id="Java Enterprise" order="5" weight="0.32956153" />
       <window_info anchor="bottom" id="Database Changes" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Application Servers" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Message" order="9" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="11" sideWeight="0.49932975" weight="0.3186969" />
+      <window_info active="true" anchor="bottom" id="Run" order="11" sideWeight="0.49932975" visible="true" weight="0.3186969" />
       <window_info anchor="bottom" id="Debug" order="12" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
@@ -789,23 +686,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/mapper/StationMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/utils/ConstantUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/model/pojo/RouteInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -938,13 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/springmvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1529">
-          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -981,13 +854,6 @@
             <element signature="n#style#0;n#h3#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="77" column="19" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1031,13 +897,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="126" column="36" selection-start-line="126" selection-start-column="36" selection-end-line="126" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1120,16 +979,6 @@
             <element signature="n#style#0;n#td#7;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#8;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#9;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/controller/admin/RouteController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
-          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1230,27 +1079,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/controller/common/CommonController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-133">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/controller/user/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="43" column="51" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#register#1;class#UserController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/mapper/UserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -1265,6 +1093,75 @@
           <folding>
             <element signature="n#style#0;n#td#8;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#1;n#td#16;n#tr#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/controller/admin/RouteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/controller/admin/StationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/controller/user/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="64" column="26" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#register#1;class#UserController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/controller/common/CommonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-112">
+          <caret line="52" column="35" lean-forward="true" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1206">
+          <caret line="66" column="6" lean-forward="true" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/html/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3715">
+          <caret line="305" column="7" lean-forward="true" selection-start-line="305" selection-start-column="7" selection-end-line="305" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/springmvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lmj/train/interceptor/LoginInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
