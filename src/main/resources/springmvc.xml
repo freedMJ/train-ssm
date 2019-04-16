@@ -54,62 +54,17 @@
         <property name="templateEngine" ref="templateEngine"/>
         <property name="characterEncoding" value="UTF-8"/>
     </bean>
-    <!--<bean id="templateResolver"-->
-          <!--class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">-->
-        <!--<property name="prefix" value="/WEB-INF/html/"/>-->
-        <!--<property name="suffix" value=".html"/>-->
-        <!--<property name="templateMode" value="HTML5"/>-->
-        <!--&lt;!&ndash; Template cache is set to false (default is true).        &ndash;&gt;-->
-        <!--<property name="cacheable" value="false"/>-->
-        <!--<property name="characterEncoding" value="UTF-8"/>-->
-    <!--</bean>-->
-
-    <!--<bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">-->
-        <!--<property name="templateResolver" ref="templateResolver"/>-->
-    <!--</bean>-->
-
-    <!--<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">-->
-        <!--<property name="contentNegotiationManager" ref="cnManager"/>-->
-
-        <!--<property name="viewResolvers">-->
-            <!--<list>-->
-                <!--&lt;!&ndash; Used here for 'xml' and 'atom' views  &ndash;&gt;-->
-                <!--<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">-->
-                    <!--<property name="order" value="1"/>-->
-                <!--</bean>-->
-
-                <!--<bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">-->
-                    <!--<property name="templateEngine" ref="templateEngine"/>-->
-                    <!--<property name="characterEncoding" value="UTF-8"/>-->
-                    <!--<property name="order" value="2"/>-->
-                    <!--&lt;!&ndash; We need to set exclusions because Content Negotiation tries to resolve from &ndash;&gt;-->
-                    <!--&lt;!&ndash; Thymeleaf even if a specific view bean (of a different class) is already    &ndash;&gt;-->
-                    <!--&lt;!&ndash; found, which might cause exceptions (e.g. ThymeleafView does not have a     &ndash;&gt;-->
-                    <!--&lt;!&ndash; 'marshaller' property).                                                     &ndash;&gt;-->
-                    <!--<property name="excludedViewNames" value="*.xml"/>-->
-                <!--</bean>-->
-            <!--</list>-->
-        <!--</property>-->
-    <!--</bean>-->
-
-    <!--&lt;!&ndash; Simple strategy: only path extension is taken into account &ndash;&gt;-->
-    <!--<bean id="cnManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">-->
-        <!--<property name="favorPathExtension" value="true"/>-->
-        <!--<property name="ignoreAcceptHeader" value="true"/>-->
-        <!--<property name="defaultContentType" value="text/html"/>-->
-
-        <!--<property name="mediaTypes">-->
-            <!--<map>-->
-                <!--<entry key="html" value="text/html"/>-->
-                <!--<entry key="xml" value="application/xml"/>-->
-                <!--<entry key="atom" value="application/atom+xml"/>-->
-            <!--</map>-->
-        <!--</property>-->
-    <!--</bean>-->
-
-    <!-- 3.视图的解析器-->
-    <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
-        <!--<property name="prefix" value="/WEB-INF/views/" />-->
-        <!--<property name="suffix" value=".jsp" />-->
-    <!--</bean>-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!-- 拦截所有mvc控制器 -->
+            <mvc:mapping path="/**"/>
+            <!-- mvc:exclude-mapping是另外一种拦截，它可以在你后来的测试中对某个页面进行不拦截，这样就不用在
+                LoginInterceptor的preHandler方法里面获取不拦截的请求uri地址了(优选) -->
+            <mvc:exclude-mapping path="/login" />
+            <mvc:exclude-mapping path="/index" />
+            <mvc:exclude-mapping path="/register" />
+            <mvc:exclude-mapping path="/buyTicketContre" />
+            <bean class="com.lmj.train.interceptor.LoginInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

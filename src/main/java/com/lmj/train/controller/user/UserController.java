@@ -40,9 +40,10 @@ public class UserController {
         if(relUser!=null){
             msg="ok";
             //HttpSession session = request.getSession();
-            session.setAttribute("user",relUser.getUsername());
+            //session.setAttribute("userName",relUser.getUsername());
             session.setAttribute("userType",relUser.getType());
             int uid=relUser.getId();
+            session.setAttribute("user",relUser);
             session.setAttribute("uid",relUser.getId());
             //model.addAttribute("Uid",relUser.getId());
         }else{
