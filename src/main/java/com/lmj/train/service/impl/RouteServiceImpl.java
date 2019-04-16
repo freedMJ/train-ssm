@@ -3,7 +3,7 @@ package com.lmj.train.service.impl;
 import com.lmj.train.mapper.RouteMapper;
 import com.lmj.train.model.Price;
 import com.lmj.train.model.Route;
-import com.lmj.train.model.RouteInfo;
+import com.lmj.train.model.pojo.RouteInfo;
 import com.lmj.train.service.IRouteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -92,4 +92,22 @@ public class RouteServiceImpl implements IRouteService {
     public List<RouteInfo> findAllNotStartTrain(Long time) {
         return routeMapper.findAllNotStartTrain(time);
     }
+    //路线表卧铺减一
+
+
+    @Override
+    public void routeSleepBerthNumsLessOne(int id) {
+        routeMapper.routeSleepBerthNumsLessOne(id);
+    }
+    //路线表硬座减一
+    @Override
+    public void routeSeatNumsLessOne(int id) {
+            routeMapper.routeSeatNumsLessOne(id);
+    }
+    //路线表站票减一
+    @Override
+    public void routeStandNumsLessOne(int id) {
+        routeMapper.routeStandNumsLessOne(id);
+    }
+
 }

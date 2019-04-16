@@ -1,6 +1,6 @@
 package com.lmj.train.model;
 
-public class Order {
+public class Orders {
     /**
      *订单表
      * id:主键，自增类型,唯一标识，int类型，不为空;
@@ -17,10 +17,10 @@ public class Order {
     private Integer payStatus;
     private  int placeType;
     private float price;
-    public Order() {
+    public Orders() {
     }
 
-    public Order(Integer id, Integer uid, Integer rid, Integer payStatus, int placeType, float price) {
+    public Orders(Integer id, Integer uid, Integer rid, Integer payStatus, int placeType, float price) {
         this.id = id;
         this.uid = uid;
         this.rid = rid;

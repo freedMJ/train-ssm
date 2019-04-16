@@ -2,7 +2,7 @@ package com.lmj.train.mapper;
 
 import com.lmj.train.model.Price;
 import com.lmj.train.model.Route;
-import com.lmj.train.model.RouteInfo;
+import com.lmj.train.model.pojo.RouteInfo;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -37,5 +37,10 @@ public interface RouteMapper {
     //查询所有未发车的列车
     List<RouteInfo> findAllNotStartTrain(Long time);
     //查询路线订单信息，根据路线id
-
+    //路线表卧铺减一
+    void routeSleepBerthNumsLessOne(int id);
+    //路线表硬座减一
+    void routeSeatNumsLessOne(int id);
+    //路线表站票减一
+    void routeStandNumsLessOne(int id);
 }

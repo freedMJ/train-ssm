@@ -4,7 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.lmj.train.model.Price;
 import com.lmj.train.model.Route;
-import com.lmj.train.model.RouteInfo;
+import com.lmj.train.model.pojo.RouteInfo;
 import com.lmj.train.model.Station;
 import com.lmj.train.service.IRouteService;
 import com.lmj.train.service.IStationService;
