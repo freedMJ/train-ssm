@@ -62,7 +62,6 @@ public class RouteController {
     @PostMapping("saveRoute")
     @ResponseBody
     public Map<String,String> saveRoute(Model model,@RequestBody RouteInfo routeInfo){
-        System.out.println(routeInfo);
         String trainName = routeInfo.getTrainName();//车次名
         String startPoint = routeInfo.getStartPoint();//起始站
         String endPoint = routeInfo.getEndPoint();//终点站
@@ -94,18 +93,13 @@ public class RouteController {
             errMsg = "请选择火车类型";
         }
             Route route = new Route(trainName,startPoint,endPoint,startTime,endTime,trainType,sleepBerthNums,seatNums,standNums);
-            System.out.println(route);
             routeService.saveRoute(route);
             int rid = routeService.findRoutebyId(trainName);
-            System.out.println(rid);
             Price price = new Price(sleepBerthPrice,seatPrice,standPrice,rid);
-            System.out.println(price);
             routeService.savePrice(price);
-            //model.addAttribute("msg","保存路线成功");
             msg = "保存路线成功";
             map.put("errMsg",errMsg);
             map.put("msg",msg);
-
         return map;
     }
 
@@ -123,27 +117,19 @@ public class RouteController {
         Price priceById = routeService.findPriceById(id);
         List<Station> stationList = stationService.findAllStation();
         model.addAttribute("stationList",stationList);
-        //RouteInfo routeInfoById = routeService.findRouteInfoById(id);
         model.addAttribute("routeById",routeById);
         model.addAttribute("priceById",priceById);
-        //String trainName =routeService.findTrainNameById(id);
-       // model.addAttribute("routeInfoById",routeInfoById);
-        //model.addAttribute("trainName",trainName);
         return "updateRoute";
     }
     @PostMapping("updateRoute")
     @ResponseBody
     public Map<String,String> updateRoute(@RequestBody RouteInfo routeInfo){
-        System.out.println(routeInfo);
-
         String trainName = routeInfo.getTrainName();
         int id = routeService.findIdByTrainName(trainName);
         routeInfo.setId(id);
         routeService.updateRouteInfo(routeInfo);
         Map<String,String> map = new HashMap<String,String>();
-
         String msg = "更新路线成功";
-
         map.put("msg",msg);
         return map;
     }

@@ -51,8 +51,6 @@ public class CommonController {
         //查询所有未发车的列车
         //购票中心显示发车之前三十分钟以内的火车
         long currentTimeStamp = (new Date().getTime())/1000;
-        //System.out.println(currentTimeStamp);
-        //long time=currentTimeStamp-ConstantUtils.time;
         PageHelper.startPage(pageNum, ConstantUtils.size);
         List<RouteInfo> allRoute = routeService.findAllNotStartTrain(currentTimeStamp);
         PageInfo<RouteInfo> routesPageInfo = new PageInfo<>(allRoute);
@@ -68,8 +66,6 @@ public class CommonController {
         model.addAttribute("pageNumArray",pageNumArray);
         model.addAttribute("pageNum",pageNum);
         model.addAttribute("pages",pages);
-        //从订单表中查找座位详情
-
         return "buyTicketContre";
     }
 

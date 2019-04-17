@@ -33,7 +33,7 @@
                  "endPoint":endPoint,
                  "startTime":startTime,
                  "endTime":endTime,
-                 "place":place,
+                 "placeType":place,
                  "price":price
              }
               if($("#placeTypeAndPrice").val()=="--请选择座位类型--"){
@@ -125,9 +125,9 @@
     <label for="placeTypeAndPrice" class="col-sm-2 control-label">座位类型/票价</label>
     <select class="form-control" style="width:800px" id="placeTypeAndPrice" name="placeTypeAndPrice">
         <option >--请选择座位类型--</option>
-      <option th:value="'卧铺/'+${routeInfo.sleepBerthPrice}" th:text="'卧铺/'+${routeInfo.sleepBerthPrice}"></option>
-      <option th:value="'硬座/'+${routeInfo.seatPrice}" th:text="'硬座/'+${routeInfo.seatPrice}"></option>
-      <option th:value="'站票/'+${routeInfo.standPrice}" th:text="'站票/'+${routeInfo.standPrice}"></option>
+      <option th:value="'0/'+${routeInfo.sleepBerthPrice}" th:text="'卧铺/'+${routeInfo.sleepBerthPrice}"></option>
+      <option th:value="'1/'+${routeInfo.seatPrice}" th:text="'硬座/'+${routeInfo.seatPrice}"></option>
+      <option th:value="'2/'+${routeInfo.standPrice}" th:text="'站票/'+${routeInfo.standPrice}"></option>
        <!--<option>硬座/200元</option>-->
       <!--<option>站票/100元</option>-->
 </select>

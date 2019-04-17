@@ -18,7 +18,7 @@
     <span style="color: red">列车发车前30分钟不允许购买该车次车票，同一用户相同时间段内只能购买一张火车票</span>
     <div th:if="${session.user}!=null">
         <li role="presentation" style="float: right;"><a href="userOut">退出</a></li>
-        <li role="presentation" style="float: right;">欢迎你,<a href="userContor" th:text="${session.user}"></a></li>
+        <li role="presentation" style="float: right;">欢迎你,<a href="userContor" th:text="${session.user.username}"></a></li>
 
     </div>
     <div th:if="${session.user}==null">

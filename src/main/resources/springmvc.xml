@@ -21,15 +21,6 @@
     <!--<mvc:default-servlet-handler/>-->
     <!-- SpringMVC配置 -->
     <!--<mvc:annotation-driven/>-->
-
-    <!-- 映射静态资源文件目录 -->
-    <!--<mvc:resources mapping="/js/**" location="/WEB-INF/static/js/" />-->
-    <!--<mvc:resources mapping="/css/**" location="/WEB-INF/static/css/" />-->
-    <!--<mvc:resources mapping="/img/**" location="/WEB-INF/static/img/" />-->
-    <!--<mvc:resources mapping="/jsa/**" location="/WEB-INF/static/jsa/" />-->
-    <!--<mvc:resources mapping="/layui/**" location="/WEB-INF/static/layui/" />-->
-    <!--<mvc:resources mapping="/related/**" location="/WEB-INF/static/related/" />-->
-    <!--<mvc:resources mapping="/scss/**" location="/WEB-INF/static/scss/" />-->
     <mvc:resources mapping="/static/**" location="/WEB-INF/static/" />
     <!-- 2.配置映射处理和适配器-->
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
@@ -57,13 +48,14 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <!-- 拦截所有mvc控制器 -->
-            <mvc:mapping path="/**"/>
+            <mvc:mapping path="/userContre"/>
+            <mvc:mapping path="/buyTrain"/>
             <!-- mvc:exclude-mapping是另外一种拦截，它可以在你后来的测试中对某个页面进行不拦截，这样就不用在
                 LoginInterceptor的preHandler方法里面获取不拦截的请求uri地址了(优选) -->
-            <mvc:exclude-mapping path="/login" />
-            <mvc:exclude-mapping path="/index" />
-            <mvc:exclude-mapping path="/register" />
-            <mvc:exclude-mapping path="/buyTicketContre" />
+            <!--<mvc:exclude-mapping path="/login" />-->
+            <!--<mvc:exclude-mapping path="/register" />-->
+            <!--<mvc:exclude-mapping path="/index" />-->
+            <!--<mvc:exclude-mapping path="/buyTicketContre" />-->
             <bean class="com.lmj.train.interceptor.LoginInterceptor"></bean>
         </mvc:interceptor>
     </mvc:interceptors>

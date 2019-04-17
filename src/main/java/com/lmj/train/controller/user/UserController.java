@@ -39,13 +39,10 @@ public class UserController {
         String msg=null;
         if(relUser!=null){
             msg="ok";
-            //HttpSession session = request.getSession();
-            //session.setAttribute("userName",relUser.getUsername());
             session.setAttribute("userType",relUser.getType());
             int uid=relUser.getId();
             session.setAttribute("user",relUser);
             session.setAttribute("uid",relUser.getId());
-            //model.addAttribute("Uid",relUser.getId());
         }else{
             msg="该用户不存在";
         }
@@ -88,25 +85,19 @@ public class UserController {
     @GetMapping("buyTrain")
     public String buyTrain(Model model,int id){
         RouteInfo routeInfoById = routeService.findRouteInfoById(id);
-        System.out.println(routeInfoById);
         model.addAttribute("routeInfo",routeInfoById);
         return "buyTrain";
     }
     @PostMapping("buyTrain")
     @ResponseBody
     public Map<String,String> buyTrain(HttpSession session,@RequestBody OrderInfo orderInfo){
-        System.out.println(orderInfo);
-        //HttpSession session = request.getSession();
         int uid = (int) session.getAttribute("uid");
-        //Integer id = user.getId();
-        System.out.println(uid);
         int rid = orderInfo.getRid();
         String trainName = orderInfo.getTrainName();
         Long startTime = orderInfo.getStartTime();
         Long endTime = orderInfo.getEndTime();
         int placeType = orderInfo.getPlaceType();
         float price = orderInfo.getPrice();
-
         Orders order = new Orders();
         order.setPayStatus(1);
         order.setUid(uid);
@@ -115,7 +106,6 @@ public class UserController {
         order.setPrice(price);
         //根据uid,rid查找订单
         Orders isorder = userService.findOrderByUidAndRid(uid, rid);
-        System.out.println(isorder);
         String errMsg=null;
         String msg=null;
         if(isorder!=null){

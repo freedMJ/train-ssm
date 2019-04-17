@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="train-ssm:warnew">
+    <output-path>$PROJECT_DIR$/out/artifacts/train_ssm_warnew</output-path>
+    <root id="archive" name="train-ssm_warnew.war">
+      <element id="artifact" artifact-name="train-ssm:war exploded" />
+      <element id="dir-copy" path="$PROJECT_DIR$" />
+    </root>
+  </artifact>
+</component>
